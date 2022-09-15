@@ -78,6 +78,7 @@ int main(int argc, char *argv[]) {
       if ((pid = fork()) == 0) {
          /* Child executing command */
          execvp(command.name, command.argv);
+	 /* TODO: what happens if you enter an incorrect command? */
       }
       /* Wait for the child to terminate */
       wait(&status); /* EDIT THIS LINE */
@@ -128,7 +129,7 @@ void printPrompt() {
    /* Build the prompt string to have the machine name,
     * current directory, or other desired information
     */
-   promptString = ...;
+   promptString = ...; /* EDIT THIS LINE */
    printf("%s ", promptString);
 }
 
